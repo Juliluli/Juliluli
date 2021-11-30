@@ -1,3 +1,44 @@
+.button {
+  background-color:blue; /* Green */
+  border: none;
+  color: white;
+  padding: 10px 20px;
+  margin-left: 5px ;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 14px;
+  border-radius: 5px;
+}
+
+.child {
+    display: inline-block;
+    vertical-align: middle;
+    margin: 5%;
+}
+
+
+li {
+  display:inline-block;
+}
+
+
+.App_logo {
+  animation: rotation 8s infinite linear;
+  height: 60px;
+  width: 60px;
+}
+
+@keyframes rotation {
+from {
+  transform: rotate(0deg);
+}
+to {
+  transform: rotate(359deg);
+}
+}
+
+
 /* Popup style */
 .popup_box {
     position: fixed;
@@ -38,13 +79,7 @@
     font-size: 20px;
   }
 
-  .button {
-    background-color:blue; /* Green */
-    border: none;
-    color: white;
-    padding: 10px 20px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 10px;
-  }
+  
+  
+  
+  
