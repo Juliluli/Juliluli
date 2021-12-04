@@ -1,12 +1,17 @@
 import React from 'react'
+import ItemCount from '../ItemCount/ItemCount';
 import './ItemListContainer.css';
 
-const ItemListContainer = ({greetings}) => {
+const ItemListContainer = ({greetings, max, inicial, value, setValue, setCartInitial}) => {
     return (
         <div>
-            <h1>{greetings}</h1>
+            <p>{greetings}</p>
+            <ItemCount max={max} inicial={inicial} value={value} setValue={setValue} setCartInitial={setCartInitial}/>
         </div>
+        
     )
 }
 
 export default ItemListContainer
+
+

@@ -1,53 +1,50 @@
-import React from 'react'
-import { useState } from 'react';
-import CartWidget from './CartWidget/CartWidget';
-import styles from "./NavBar.module.css"
-import Option from "./Options/Option"
+//import {Navbar, Container, Nav, NavDropdown,Form,FormControl,Button} from 'react-bootstrap'
+
+import Navbar from 'react-bootstrap/Navbar'
+import Container from 'react-bootstrap/Container'
+import Nav from 'react-bootstrap/Nav'
+import NavDropdown from 'react-bootstrap/NavDropdown'
+import CartWidget from './CartWidget/CartWidget'
 import logo from '../../logo.png';
+import styles from "./NavBar.module.css"
+// importing react-bootstrap (not bootstrap)
+//https://react-bootstrap.github.io/components/navbar/
 
+function NavBar({contador}) {
 
-const NavBar = () => {
-    const [isOpen, setIsOpen] = useState(false);
-    const togglePopup = () => {setIsOpen(!isOpen);}
     return (
         <>
-        <div className={styles.child}><img src={logo} className={styles.App_logo} alt="logo" /></div>
-        <div className={styles.child}><CartWidget /></div>
-        <div>
-            <h1>Menu Juliluli</h1>
-            <li><button value="Posters" onClick={togglePopup} className={styles.button}>Posters</button></li>
-            {isOpen && <Option
-                content={<>
-                    <b>Posters</b>
-                    <p>Here are a lot of posters.</p>
-                </>}
-                handleClose={togglePopup}
-                />}
-            <li><button value="Books" onClick={togglePopup} className={styles.button}>Books</button></li>
-            {isOpen && <Option
-                content={<>
-                    <b>Books</b>
-                    <p>Here are a lot of Books.</p>
-                </>}
-                handleClose={togglePopup}
-                />}
-            <li><button value="Gifts" onClick={togglePopup} className={styles.button}>Gifts</button></li>
-            {isOpen && <Option
-                content={<>
-                    <b>Gifts</b>
-                    <p>Here are a lot of Gifts.</p>
-                </>}
-                handleClose={togglePopup}
-                />}
-            <li><button value="Events" onClick={togglePopup} className={styles.button}>Events</button></li>
-            {isOpen && <Option
-                content={<>
-                    <b>Events</b>
-                    <p>Here are a lot of Events.</p>
-                </>}
-                handleClose={togglePopup}
-                />}
-        </div>
+        
+            <Navbar bg="light" expand="lg">
+            <Container fluid>
+                <img src={logo} className={styles.App_logo} alt="logo" />
+                <Navbar.Brand href="#">React Ecommerce</Navbar.Brand>
+                <Navbar.Toggle aria-controls="navbarScroll" />
+                <Navbar.Collapse id="navbarScroll">
+                <Nav
+                    className="me-auto my-2 my-lg-0"
+                    style={{ maxHeight: '100px' }}
+                    navbarScroll
+                >
+                    <Nav.Link href="#action1">Home</Nav.Link>
+                    <Nav.Link href="#action2">Events</Nav.Link>
+                    <NavDropdown title="Productos" id="navbarScrollingDropdown">
+                    <NavDropdown.Item href="#action3">Tshirts</NavDropdown.Item>
+                    <NavDropdown.Item href="#action4">Posters</NavDropdown.Item>
+                    <NavDropdown.Divider />
+                    <NavDropdown.Item href="#action5">
+                        Sale
+                    </NavDropdown.Item>
+                    </NavDropdown>
+                    <Nav.Link href="#" disabled>
+                    Special Discount
+                    </Nav.Link>
+                    
+                </Nav>
+                </Navbar.Collapse>
+                <p className={styles.cartItems}><b>{contador}</b> Item(s)</p><CartWidget/>
+            </Container>
+            </Navbar>
         </>
     )
 }

@@ -1,20 +1,39 @@
+.counter {
+  width: 30%;
+}
+
 .button {
   background-color:blue; /* Green */
   border: none;
   color: white;
-  padding: 10px 20px;
-  margin-left: 5px ;
+  padding: 5px 10px;
+  margin-left: 15px ;
   text-align: center;
   text-decoration: none;
   display: inline-block;
-  font-size: 14px;
+  font-size: calc(10px + 1vmin);
   border-radius: 5px;
 }
+
+.button1 {
+  background-color:rgb(116, 141, 250); /* Green */
+  border: none;
+  color: white;
+  padding: 7px 7px;
+  margin: 25px 25px;
+  text-align: center;
+  text-decoration: none;
+  font-size: calc(10px);
+  font-weight: bold;
+  border-radius: 5px;
+}
+
 
 .child {
     display: inline-block;
     vertical-align: middle;
     margin: 5%;
+    font-size: calc(10px + 1vmin);
 }
 
 
@@ -38,6 +57,11 @@ to {
 }
 }
 
+.cartItems {
+  vertical-align: middle;
+  margin: 10px;
+  font-size: calc(10px + 0.75vmin);
+}
 
 /* Popup style */
 .popup_box {
