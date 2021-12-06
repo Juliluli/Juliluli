@@ -12,13 +12,14 @@ function App() {
     const max=15
     const [cartInitial, setCartInitial]=useState(0)
     const [value, setValue]=useState(inicial)
+    const [afterAdd, setafterAdd]=useState(max)
 
 
   return (
     <center>
         <NavBar contador={cartInitial}/>
         Hola, soy app de e-commerce.
-        <ItemListContainer max={max} inicial={inicial} greetings="Hola, soy ItemListContainer que vengo de app!"
+        <ItemListContainer afterAdd={afterAdd} setafterAdd={setafterAdd} inicial={inicial} greetings="Hola, soy ItemListContainer que vengo de app!"
         value={value} setValue={setValue} setCartInitial={setCartInitial}/>
     </center>
   );
