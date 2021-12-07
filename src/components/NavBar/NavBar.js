@@ -10,7 +10,7 @@ import styles from "./NavBar.module.css"
 // importing react-bootstrap (not bootstrap)
 //https://react-bootstrap.github.io/components/navbar/
 
-function NavBar({contador}) {
+function NavBar({contador, cartItems}) {
 
     return (
         <>
@@ -42,7 +42,7 @@ function NavBar({contador}) {
                     
                 </Nav>
                 </Navbar.Collapse>
-                <p className={styles.cartItems}><b>{contador}</b> Item(s)</p><CartWidget/>
+                <p className={styles.cartItems}><b>{contador} $, {cartItems} Item(s)</b></p><CartWidget/>
             </Container>
             </Navbar>
         </>

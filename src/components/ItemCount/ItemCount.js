@@ -4,7 +4,7 @@ import { useState } from 'react';
 //import CounterInput from 'react-bootstrap-counter';
 
 //addOne, subtractOne,initial,stock
-function ItemCount({cartInitial, setCartInitial , stock}) {
+function ItemCount({cartInitial, setCartInitial , cartItems, setCartItems,stock, precio}) {
 
     const inicial=1
     const [value, setValue]=useState(inicial)
@@ -24,8 +24,22 @@ function ItemCount({cartInitial, setCartInitial , stock}) {
 
     function AddCart() {
         alert('Exelente, agregaste a tu carrito.')
-        setCartInitial(value)
+        setCartInitial(cartInitial+value*precio)
+        setCartItems(cartItems+value)
         setafterAdd(afterAdd-value)
+        setValue(inicial)
+    }
+
+    function ClearCart() {
+        if (cartItems>=value) {
+            setCartInitial(cartInitial-(value*precio))
+            setCartItems(cartItems-value)
+            setafterAdd(afterAdd+value)
+            setValue(inicial)
+        } else {
+            alert('no se puede borrar esta cantidad del carrito')
+            setValue(inicial)
+        }
     }
 
     return (
@@ -35,7 +49,8 @@ function ItemCount({cartInitial, setCartInitial , stock}) {
             <button onClick={subtractOne} className={styles.button1}>-</button>
             <button onClick={reset} className={styles.button2}>reset</button>            
             <p className={styles.cartItems}>Item(s) available: <b>{afterAdd}</b></p>
-            <button onClick={AddCart} className={styles.button}>Agregar al carrito</button>
+            <button onClick={AddCart} className={styles.button}>Agregar {value} al carrito</button>
+            <button onClick={ClearCart} className={styles.button}>Borrar {value} del carrito</button>
             {/* <div className={styles.counter}>
                 <CounterInput value={initial} min={0} max={stock} onChange={ (value) => { console.log(value) } } />
             </div> */}

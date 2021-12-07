@@ -9,12 +9,15 @@ import { useState } from 'react';
 function App() {
 
   const [cartInitial, setCartInitial]=useState(0)
+  const [cartItems, setCartItems]=useState(0)
 
   return (
     <center>
-        <NavBar contador={cartInitial}/>
+        <NavBar contador={cartInitial} cartItems={cartItems}/>
         Hola, soy app de e-commerce.
-        <ItemListContainer cartInitial={cartInitial} setCartInitial={setCartInitial} greetings="Hola, soy ItemListContainer que vengo de app!"/>
+        <ItemListContainer cartInitial={cartInitial} setCartInitial={setCartInitial} 
+        cartItems={cartItems} setCartItems={setCartItems}
+        greetings="Hola, soy ItemListContainer que vengo de app!"/>
     </center>
   );
 }
