@@ -10,7 +10,6 @@
   margin-left: 15px ;
   text-align: center;
   text-decoration: none;
-  display: inline-block;
   font-size: calc(10px + 1vmin);
   border-radius: 5px;
 }
@@ -20,9 +19,24 @@
   border: none;
   color: white;
   padding: 7px 7px;
-  margin: 25px 25px;
+  margin: 10px 25px;
   text-align: center;
   text-decoration: none;
+  display: inline-block;
+  font-size: calc(10px);
+  font-weight: bold;
+  border-radius: 5px;
+}
+
+.button2 {
+  background-color:rgb(116, 141, 250); /* Green */
+  border: none;
+  color: white;
+  padding: 7px 7px;
+  margin: 10px 25px;
+  text-align: center;
+  text-decoration: none;
+  display: flex;
   font-size: calc(10px);
   font-weight: bold;
   border-radius: 5px;

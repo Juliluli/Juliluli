@@ -1,12 +1,30 @@
-import React from 'react'
+import React, {useState, useEffect} from 'react'
+import { getFetch } from '../../helpers/getFetch';
 import ItemCount from '../ItemCount/ItemCount';
+import ItemList from '../ItemList/ItemList';
 import './ItemListContainer.css';
 
-const ItemListContainer = ({greetings, afterAdd, setafterAdd, inicial, value, setValue, setCartInitial}) => {
+
+const ItemListContainer = ({greetings,cartInitial,setCartInitial}) => {
+    const [productos, setProductos]=useState([])
+    const [loading, setLoading]=useState(true)
+     
+useEffect(() => {
+        getFetch
+        .then(resp => setProductos(resp))
+        .catch(err=>console.log(err))
+        .finally(()=>setLoading(false)) 
+}, [])
+    
+   
     return (
         <div>
             <p>{greetings}</p>
-            <ItemCount inicial={inicial} value={value} setValue={setValue} setCartInitial={setCartInitial} afterAdd={afterAdd} setafterAdd={setafterAdd}/>
+            
+            {loading ? <h2>Cargando...</h2> : <ItemList items={productos} cartInitial={cartInitial} setCartInitial={setCartInitial}/>}
+            {/* <ItemList items={items}/> */}
+            {/* {productos.map(producto=><li key={producto.id}>{producto.name}</li>)} */}
+            
         </div>
         
     )

@@ -1,9 +1,14 @@
 import React from 'react'
 import styles from "../NavBar/NavBar.module.css"
+import { useState } from 'react';
 //import CounterInput from 'react-bootstrap-counter';
 
 //addOne, subtractOne,initial,stock
-function ItemCount({ inicial, afterAdd, setafterAdd, value, setValue, setCartInitial}) {
+function ItemCount({cartInitial, setCartInitial , stock}) {
+
+    const inicial=1
+    const [value, setValue]=useState(inicial)
+    const [afterAdd, setafterAdd]=useState(stock)
 
     const addOne = () => {
         value<afterAdd ? setValue(prev=>prev + 1) : alert('compra maxima');}
@@ -13,6 +18,8 @@ function ItemCount({ inicial, afterAdd, setafterAdd, value, setValue, setCartIni
 
     const reset = () => {
         setValue(inicial)
+        //setCartInitial(0) //cartvalue-stock of this
+        //setafterAdd(stock) //
     } 
 
     function AddCart() {
@@ -23,23 +30,18 @@ function ItemCount({ inicial, afterAdd, setafterAdd, value, setValue, setCartIni
 
     return (
         <div>
-            <h2>{value}</h2>
+            <h2>Add {value} item</h2>
             <button onClick={addOne} className={styles.button1}>+</button>
             <button onClick={subtractOne} className={styles.button1}>-</button>
-            <button onClick={reset} className={styles.button1}>reset</button>
+            <button onClick={reset} className={styles.button2}>reset</button>            
+            <p className={styles.cartItems}>Item(s) available: <b>{afterAdd}</b></p>
+            <button onClick={AddCart} className={styles.button}>Agregar al carrito</button>
             {/* <div className={styles.counter}>
                 <CounterInput value={initial} min={0} max={stock} onChange={ (value) => { console.log(value) } } />
             </div> */}
-            
-            <p className={styles.cartItems}>Item(s) available: <b>{afterAdd}</b></p>
-            <button onClick={AddCart} className={styles.button}>Agregar al carrito</button>
         </div>
     )
 }
 
 export default ItemCount
-
-// function ItemCount({ stock, initial,  onAdd }) {
-//     // Desarrollar lógica
-//    }
    
