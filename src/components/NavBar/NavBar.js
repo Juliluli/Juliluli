@@ -39,7 +39,6 @@ function NavBar({contador, cartItems}) {
                     <Nav.Link href="#" disabled>
                     Special Discount
                     </Nav.Link>
-                    
                 </Nav>
                 </Navbar.Collapse>
                 <p className={styles.cartItems}><b>{contador} $, {cartItems} Item(s)</b></p><CartWidget/>

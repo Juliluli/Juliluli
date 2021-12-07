@@ -5,6 +5,7 @@ import NavBar from './components/NavBar/NavBar';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap.js';
 import { useState } from 'react';
+import ItemDetailContainer from './components/ItemDetailContainer/ItemDetailContainer';
 
 function App() {
 
@@ -18,6 +19,7 @@ function App() {
         <ItemListContainer cartInitial={cartInitial} setCartInitial={setCartInitial} 
         cartItems={cartItems} setCartItems={setCartItems}
         greetings="Hola, soy ItemListContainer que vengo de app!"/>
+        <ItemDetailContainer/>
     </center>
   );
 }

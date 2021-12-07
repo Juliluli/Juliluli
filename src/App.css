@@ -2,11 +2,11 @@
 .App-header {
   
   background-color:azure;
-  min-height: 100vh;
+  /* min-height: 100vh;
 
   position: relative;
   align-items: center;
-  justify-content: center;
+  justify-content: center; */
   text-align: center;
   color: #282c34;
   font-size: calc(10px + 2vmin);
@@ -14,9 +14,9 @@
   
 }
 
-.itemlistcontainer{
+/* .itemlistcontainer{
   display: flex;
   flex-direction: column;
-}
+} */
 
 

@@ -1,8 +1,6 @@
 import React, {useState, useEffect} from 'react'
 import { getFetch } from '../../helpers/getFetch';
-import ItemCount from '../ItemCount/ItemCount';
 import ItemList from '../ItemList/ItemList';
-import './ItemListContainer.css';
 
 
 const ItemListContainer = ({greetings,cartInitial,setCartInitial,cartItems, setCartItems}) => {
