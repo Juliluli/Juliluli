@@ -8,12 +8,17 @@ function ItemDetailContainer() {
     const [detalles, setDetalles]=useState([])
     const [loader, setLoader]=useState(true)
      
-useEffect(() => {
-    getItemDetail
+getItemDetail
         .then(resp => setDetalles(resp))
         .catch(err=>console.log(err))
         .finally(()=>setLoader(false)) 
-}, [])
+
+// useEffect(() => {
+//     getItemDetail
+//         .then(resp => setDetalles(resp))
+//         .catch(err=>console.log(err))
+//         .finally(()=>setLoader(false)) 
+// }, [])
 
     return (
         <div>
