@@ -17,5 +17,5 @@ detail: 'An anchovy is a small, common forage fish of the family Engraulidae. Mo
 export const getItemDetail = new Promise((resolve, reject)=>{
         //acciones pueden ser o no asincroniucas
         // reject("404 not found")
-        setTimeout(() => {resolve(itemDetails.find(onlyOne=> onlyOne.id === 1))}, 2000)})
+        setTimeout(() => {resolve(itemDetails)}, 2000)})
     

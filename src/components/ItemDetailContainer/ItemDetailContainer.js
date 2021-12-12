@@ -3,15 +3,20 @@ import ItemDetail from '../ItemDetail/ItemDetail'
 import { getItemDetail } from '../../helpers/getItemDetail';
 import styles from "../NavBar/NavBar.module.css"
 
-function ItemDetailContainer() {
+function ItemDetailContainer({cartInitial, setCartInitial, cartItems, setCartItems}) {
 // Implementar mock invocando a getItem() y utilizando el resolver then
-    const [detalles, setDetalles]=useState([])
+    const [detalle, setDetalle]=useState([])
     const [loader, setLoader]=useState(true)
-     
-getItemDetail
-        .then(resp => setDetalles(resp))
-        .catch(err=>console.log(err))
-        .finally(()=>setLoader(false)) 
+
+useEffect(()=>{
+    getItemDetail
+            .then(resp => {
+                setDetalle(resp.find(onlyOne=> onlyOne.id === 1)
+                )})
+            .catch(err=>console.log(err))
+            .finally(()=>setLoader(false)) 
+    },[])  
+//
 
 // useEffect(() => {
 //     getItemDetail
@@ -23,7 +28,10 @@ getItemDetail
     return (
         <div>
             {/* JSX que devuelva un ItemDetail (punto 2)  */}
-            {loader ? <h2>Cargando...</h2>: <div className={styles.divDetail}><h1>Detalles</h1><ItemDetail items={detalles}/></div>}
+            {loader ? <h2>Cargando...</h2>: 
+            <div className={styles.divDetail}><h1>Detalles</h1>
+            <ItemDetail item={detalle} cartInitial={cartInitial} setCartInitial={setCartInitial}  cartItems={cartItems} setCartItems={setCartItems}/>
+            </div>}
         </div>
     )
 }

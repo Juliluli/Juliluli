@@ -30,13 +30,19 @@
 }
 
 
+.mainNavBar {
+  position:fixed !important;
+    top:0;
+    width:100%;
+    z-index:100;
+}
+
 
 .button {
   background-color:blue; /* Green */
   border: none;
   color: white;
   padding: 5px 10px;
-  margin-left: 15px ;
   text-align: center;
   text-decoration: none;
   font-size: calc(10px + 1vmin);
@@ -65,10 +71,30 @@
   margin: 10px 25px;
   text-align: center;
   text-decoration: none;
-  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
   font-size: calc(10px);
   font-weight: bold;
   border-radius: 5px;
+}
+
+.button2div {
+  /* display: flex;
+  align-items: center;
+  justify-content: center; */
+}
+
+.button3 {
+  background-color:blue; /* Green */
+  border: none;
+  color: white;
+  padding: 5px 10px;
+  text-align: center;
+  text-decoration: none;
+  font-size: calc(10px + 1vmin);
+  border-radius: 5px;
+  margin: 15px;
+  padding: 10px;
 }
 
 

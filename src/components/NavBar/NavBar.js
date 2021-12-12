@@ -15,7 +15,7 @@ function NavBar({contador, cartItems}) {
     return (
         <>
         
-            <Navbar bg="light" expand="lg">
+            <Navbar bg="light" expand="lg" className={styles.mainNavBar}>
             <Container fluid>
                 <img src={logo} className={styles.App_logo} alt="logo" />
                 <Navbar.Brand href="#">React Ecommerce</Navbar.Brand>

@@ -16,10 +16,9 @@ function App() {
     <center>
         <NavBar contador={cartInitial} cartItems={cartItems}/>
         Hola, soy app de e-commerce.
-        <ItemListContainer cartInitial={cartInitial} setCartInitial={setCartInitial} 
-        cartItems={cartItems} setCartItems={setCartItems}
+        <ItemListContainer 
         greetings="Hola, soy ItemListContainer que vengo de app!"/>
-        <ItemDetailContainer/>
+        <ItemDetailContainer cartInitial={cartInitial} setCartInitial={setCartInitial} cartItems={cartItems} setCartItems={setCartItems}/>
     </center>
   );
 }

@@ -3,7 +3,7 @@ import { getFetch } from '../../helpers/getFetch';
 import ItemList from '../ItemList/ItemList';
 
 
-const ItemListContainer = ({greetings,cartInitial,setCartInitial,cartItems, setCartItems}) => {
+const ItemListContainer = ({greetings }) => {
     const [productos, setProductos]=useState([])
     const [loading, setLoading]=useState(true)
      
@@ -20,9 +20,7 @@ useEffect(() => {
             <p>{greetings}</p>
             
             {loading ? <h2>Cargando...</h2> : <ItemList items={productos} 
-            cartInitial={cartInitial} setCartInitial={setCartInitial} 
-            cartItems={cartItems} setCartItems={setCartItems}
-            precio={productos.price}/>}
+            />}
             {/* <ItemList items={items}/> */}
             {/* {productos.map(producto=><li key={producto.id}>{producto.name}</li>)} */}
             

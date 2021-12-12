@@ -47,10 +47,12 @@ function ItemCount({cartInitial, setCartInitial , cartItems, setCartItems,stock,
             <h2>Add {value} item</h2>
             <button onClick={addOne} className={styles.button1}>+</button>
             <button onClick={subtractOne} className={styles.button1}>-</button>
-            <button onClick={reset} className={styles.button2}>reset</button>            
+            <div className={styles.button2div}>           
+                <button onClick={reset} className={styles.button2}>reset</button>            
+            </div>
             <p className={styles.cartItems}>Item(s) available: <b>{afterAdd}</b></p>
-            <button onClick={AddCart} className={styles.button}>Agregar {value} al carrito</button>
-            <button onClick={ClearCart} className={styles.button}>Borrar {value} del carrito</button>
+            <button onClick={AddCart} className={styles.button3}>Agregar {value} al carrito</button>
+            <button onClick={ClearCart} className={styles.button3}>Borrar {value} del carrito</button>
             {/* <div className={styles.counter}>
                 <CounterInput value={initial} min={0} max={stock} onChange={ (value) => { console.log(value) } } />
             </div> */}
