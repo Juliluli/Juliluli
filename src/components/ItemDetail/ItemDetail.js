@@ -1,6 +1,7 @@
 import React from 'react'
 import styles from "../NavBar/NavBar.module.css"
 import ItemCount from '../ItemCount/ItemCount'
+import {Link } from 'react-router-dom'
 
 const ItemDetail=({ item, cartInitial, setCartInitial , cartItems, setCartItems})=> {
 
