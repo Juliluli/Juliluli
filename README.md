@@ -1,4 +1,11 @@
 # Getting Started with Create React App
+``` javascript
+const lisa= 'student'
+```
+
+![](./Entregaintermedia.gif)
+
+<img src="./Entregaintermedia.gif" width="100" height="55" />
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
