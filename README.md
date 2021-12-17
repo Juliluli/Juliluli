@@ -2,6 +2,7 @@
 ``` javascript
 const lisa= 'student'
 ```
+![gif](Entregaintermedia.gif)
 
 ![](./Entregaintermedia.gif)
 
