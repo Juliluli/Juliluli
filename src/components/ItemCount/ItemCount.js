@@ -50,10 +50,12 @@ function ItemCount({
   return (
     <div>
       <h2>Add {value} item</h2>
-      <button onClick={addOne} className={styles.button1}>
+      <button disabled={value > stockafterAdd} onClick={addOne} className={styles.button1}>
         +
       </button>
-      <button onClick={subtractOne} className={styles.button1}>
+      
+
+      <button disabled={value < inicial} onClick={subtractOne} className={styles.button1}>
         -
       </button>
       <div className={styles.button2div}>
