@@ -1,51 +1,10 @@
-import React from "react";
+import React, {useContext} from "react";
 import styles from "../NavBar/NavBar.module.css";
-import { useState } from "react";
-//import CounterInput from 'react-bootstrap-counter';
+import { ContextApp1 } from "../ItemDetail/ItemDetail";
 
-//addOne, subtractOne,initial,stock
-function ItemCount({
-  cartInitial,
-  setCartInitial,
-  cartItems,
-  setCartItems,
-  stock,
-  precio,
-  onAdd,
-  inicial,
-  value,
-  setValue,
-  stockafterAdd,
-  setStockafterAdd
-}) {
+function ItemCount() {
 
-
-  const addOne = () => {
-    value < stockafterAdd ? setValue((prev) => prev + 1) : alert("compra maxima");
-  };
-
-  const subtractOne = () => {
-    value >= inicial ? setValue((prev) => prev - 1) : alert("compra minima");
-  };
-
-  const reset = () => {
-    setValue(inicial);
-    //setCartInitial(0) //cartvalue-stock of this
-    //setafterAdd(stock) //
-  };
-
-
-  function ClearCart() {
-    if (cartItems >= value) {
-      setCartInitial(cartInitial - value * precio);
-      setCartItems(cartItems - value);
-      setStockafterAdd(stockafterAdd + value);
-      setValue(inicial);
-    } else {
-      alert("no se puede borrar esta cantidad del carrito");
-      setValue(inicial);
-    }
-  }
+  const {inicial, value, stockafterAdd, onAdd, addOne, subtractOne,reset} = useContext(ContextApp1)
 
   return (
     <div>
@@ -54,7 +13,6 @@ function ItemCount({
         +
       </button>
       
-
       <button disabled={value < inicial} onClick={subtractOne} className={styles.button1}>
         -
       </button>
@@ -63,16 +21,16 @@ function ItemCount({
           reset
         </button>
       </div>
-      <p className={styles.cartItems}>
+      {/* <p className={styles.cartItems}>
         Item(s) available: <b>{stockafterAdd}</b>
-      </p>
+      </p> */}
       <button disabled={value == 0} onClick={()=>onAdd(value)} className={styles.button3}>
           {/* en realidad se podria simplemente escribir onClick={onAdd} */}
         Agregar {value} al carrito
       </button>
-      <button disabled={value == 0} onClick={ClearCart} className={styles.button3}>
+      {/* <button disabled={value == 0} onClick={ClearCart} className={styles.button3}>
         Borrar {value} del carrito
-      </button>
+      </button> */}
       {/* <div className={styles.counter}>
                 <CounterInput value={initial} min={0} max={stock} onChange={ (value) => { console.log(value) } } />
             </div> */}

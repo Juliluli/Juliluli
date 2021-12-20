@@ -18,7 +18,7 @@ function NavBar({ contador, cartItems }) {
         <Container fluid>
           <img src={logo} className={styles.App_logo} alt="logo" />
           {/* <Navbar.Brand href="/">React Ecommerce</Navbar.Brand> */}
-          <Link className={styles.NavBarText} to="/">
+          <Link to="/" className={styles.NavBarText} >
             React Ecommerce
           </Link>
           <Navbar.Toggle aria-controls="navbarScroll" />
@@ -28,18 +28,18 @@ function NavBar({ contador, cartItems }) {
               style={{ maxHeight: "100px" }}
               navbarScroll
             >
-              <Nav.Link href="/" className={styles.smallNavText}>
+              <Link to="/" className={styles.smallNavText}>
                 Home
-              </Nav.Link>
-              <Nav.Link href="/category/small" className={styles.smallNavText}>
-                Small
-              </Nav.Link>
-              <Nav.Link href="/category/medium" className={styles.smallNavText}>
-                Medium
-              </Nav.Link>
-              <Nav.Link href="/category/big" className={styles.smallNavText}>
-                Large
-              </Nav.Link>
+              </Link>
+              <Link to="/category/small" className={styles.smallNavText}>
+                 Small 
+              </Link>
+              <Link to="/category/medium" className={styles.smallNavText}>
+                 Medium 
+              </Link>
+              <Link to="/category/big" className={styles.smallNavText}>
+                 Large 
+              </Link>
               {/* <NavDropdown title="Productos" id="navbarScrollingDropdown">
                     <NavDropdown.Item href="#action3">Tshirts</NavDropdown.Item>
                     <NavDropdown.Item href="#action4">Posters</NavDropdown.Item>
@@ -56,14 +56,14 @@ function NavBar({ contador, cartItems }) {
           {/* <p><Link to="/cart" className={styles.smallNavText}>Carrito</Link></p> */}
           <p className={styles.cartItems}>
             <b>
-              {contador} $, {cartItems} Item(s)
+              {/* {contador} $, {cartItems} Item(s) */}
             </b>
           </p>
           <div className={styles.cartNav}>
             <CartWidget />
-            <Nav.Link href="/cart" className={styles.smallNavText}>
+            <Link to="/cart" className={styles.smallNavText}>
               Carrito
-            </Nav.Link>
+            </Link>
           </div>
         </Container>
       </Navbar>

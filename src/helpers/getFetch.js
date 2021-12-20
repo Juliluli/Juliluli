@@ -59,7 +59,7 @@ const items = [
     name: "Anchovy",
     description: "Anchovy",
     category: "small",
-    stock: 0,
+    stock: 1,
     price: 2.5,
   },
 ];

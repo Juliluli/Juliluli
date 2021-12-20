@@ -43,7 +43,7 @@
 
 .NavBarText {
   font-family: Verdana, Geneva, Tahoma, sans-serif;
-  color: rgb(104, 100, 100);
+  color: rgb(104, 100, 100) !important;
   text-align: center;
   text-decoration: none;
   font-size: calc(10px + 1vmin);
@@ -55,6 +55,7 @@
   text-align: center;
   text-decoration: none;
   font-size: calc(10px +0.5vmin) !important;
+  margin: 0 5px;;
 }
 
 .cartNav {
@@ -160,8 +161,8 @@ button[disabled]{
   font-size: calc(10px + 1vmin);
 }
 
-li {
-  display: inline-block;
+.li {
+  font-size: calc(10px + 0.75vmin) 
 }
 
 .App_logo {

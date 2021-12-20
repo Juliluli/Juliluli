@@ -71,7 +71,7 @@ const itemDetails = [
     name: "Anchovy",
     description: "Anchovy",
     small: "medium",
-    stock: 0,
+    stock: 1,
     price: 2.5,
     detail:
       "An anchovy is a small, common forage fish of the family Engraulidae. Most species are found in marine waters, but several will enter brackish water, and some in South America are restricted to fresh water.",

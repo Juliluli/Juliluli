@@ -4,8 +4,6 @@ import styles from "../NavBar/NavBar.module.css";
 import { Link } from "react-router-dom";
 
 const Item = ({ item }) => {
-  // Desarrolla la vista de un ítem donde item es de tipo
-  // { id, title, price, pictureUrl }
 
   return (
     <div className="cartProduct">

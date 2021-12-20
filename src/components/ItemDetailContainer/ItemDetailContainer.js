@@ -1,16 +1,12 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect,createContext } from "react";
 import ItemDetail from "../ItemDetail/ItemDetail";
 import { getItemDetail } from "../../helpers/getItemDetail";
 import styles from "../NavBar/NavBar.module.css";
 import { useParams } from "react-router-dom";
 
-function ItemDetailContainer({
-  cartInitial,
-  setCartInitial,
-  cartItems,
-  setCartItems,
-}) {
-  // Implementar mock invocando a getItem() y utilizando el resolver then
+export const ContextApp2=createContext([])
+
+function ItemDetailContainer() {
   const [detalle, setDetalle] = useState([]);
   const [loader, setLoader] = useState(true);
   const { id } = useParams();
@@ -27,30 +23,19 @@ function ItemDetailContainer({
   }, [id]);
   //.find(onlyOne=> onlyOne.id === 1)
 
-  // useEffect(() => {
-  //     getItemDetail
-  //         .then(resp => setDetalles(resp))
-  //         .catch(err=>console.log(err))
-  //         .finally(()=>setLoader(false))
-  // }, [])
-
   return (
     <div>
+      <ContextApp2.Provider value={{detalle}}>
       {/* JSX que devuelva un ItemDetail (punto 2)  */}
       {loader ? (
         <h2>Cargando...</h2>
       ) : (
         <div className={styles.divDetail}>
           <h1>Detalles</h1>
-          <ItemDetail
-            item={detalle}
-            cartInitial={cartInitial}
-            setCartInitial={setCartInitial}
-            cartItems={cartItems}
-            setCartItems={setCartItems}
-          />
+          <ItemDetail />
         </div>
       )}
+      </ContextApp2.Provider>
     </div>
   );
 }
