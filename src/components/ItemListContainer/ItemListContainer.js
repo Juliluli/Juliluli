@@ -2,8 +2,15 @@ import React, { useState, useEffect ,createContext} from "react";
 import { getFetch } from "../../helpers/getFetch";
 import ItemList from "../ItemList/ItemList";
 import { useParams } from "react-router-dom";
+import { css } from "@emotion/react";
+import ClipLoader from "react-spinners/ClipLoader";
 
 export const ContextApp3=createContext([])
+const override = css`
+  display: block;
+  margin: 0 auto;
+  border-color: blue;
+`;
 
 const ItemListContainer = ({ greetings }) => {
   const [productos, setProductos] = useState([]);
@@ -34,7 +41,9 @@ const ItemListContainer = ({ greetings }) => {
       <ContextApp3.Provider value={{productos}}>
       <p>{greetings}</p>
 
-      {loading ? <h2>Cargando...</h2> : <ItemList />}
+      {loading ? <><h2>Cargando...</h2>
+       <ClipLoader css={override} size={150} color={"#123abc"} speedMultiplier={1.5} /></>
+      : <ItemList />}
       {/* <ItemList items={items}/> */}
       {/* {productos.map(producto=><li key={producto.id}>{producto.name}</li>)} */}
       </ContextApp3.Provider>

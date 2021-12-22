@@ -29,6 +29,11 @@
   height: auto;
 }
 
+.imgCart {
+  max-width: 10%;
+  height: auto;
+}
+
 .imgProducto {
   max-width: 90%;
   height: auto;

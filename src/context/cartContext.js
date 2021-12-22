@@ -25,13 +25,23 @@ const CartContextProvider = ({children}) => {
         //   }
     }
 
+    //Faltaría aplicar la lógica de borrar un producto 
+    //que eso lo podrías hacer con un filter comparando por "id".
+
     function clearCarrito() {
         setCartList([])
     }
 
     function removeItem(itemId) {
-        
+
+        const index = cartList.findIndex(i => i.id ===itemId.id)
+
+        cartList.splice(index, 1)
+
+        setCartList([...cartList])
+
     }
+
 
     function isInCart(id) {
         
@@ -39,7 +49,7 @@ const CartContextProvider = ({children}) => {
 
     return (
         <div>
-            <CartContext.Provider value={{cartList, addItem, clearCarrito}}>
+            <CartContext.Provider value={{cartList, addItem, removeItem, clearCarrito}}>
                 {children}
             </CartContext.Provider>
             
