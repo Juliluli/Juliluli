@@ -34,8 +34,6 @@ const ItemListContainer = ({ greetings }) => {
     }
   }, [id]);
 
-  console.log(id);
-
   return (
     <div>
       <ContextApp3.Provider value={{productos}}>

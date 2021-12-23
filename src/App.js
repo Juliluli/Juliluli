@@ -9,6 +9,7 @@ import { useState, createContext } from "react";
 import ItemDetailContainer from "./components/ItemDetailContainer/ItemDetailContainer";
 import styles from "./components/NavBar/NavBar.module.css";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+
 import Cart from "./components/Cart/Cart";
 import CartContextProvider, { CartContext } from "./context/cartContext";
 

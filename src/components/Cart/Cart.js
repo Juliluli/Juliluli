@@ -1,4 +1,4 @@
-import React, {useContext} from "react";
+import React, {useContext, useState} from "react";
 import { CartContext } from "../../context/cartContext";
 import styles from "../NavBar/NavBar.module.css";
 import Table from "react-bootstrap/Table";
@@ -7,10 +7,11 @@ function Cart() {
   // const {cartInitial,setCartInitial, cartItems,setCartItems} =useContext(ContextApp)
   const {cartList, removeItem, clearCarrito} = useContext(CartContext)
 
-  function onRemove() {
-    removeItem({...cartList});
-  }
+  const [cartTot, setCartTot] = useState()
 
+  // function onRemove() {
+  //   removeItem({...cartList});
+  // }
 
   return (
     <>
@@ -33,10 +34,11 @@ function Cart() {
               <td>{prod.name}</td>
               <td>{prod.cantidad}</td>
               <td>{prod.cantidad*prod.price}</td>
-              <td onClick={onRemove}><b>X</b></td>
+              <td onClick={()=>removeItem(prod.id)}><b>X</b></td>
             </tr>)}
   </tbody>
 </Table>
+    <h2>Precio total: {cartList.reduce((total, item)=>total+(item.price*item.cantidad),0)}</h2>
     <button onClick={clearCarrito}>Vaciar Carrito</button>
     </>
     );
