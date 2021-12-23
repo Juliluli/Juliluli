@@ -59,10 +59,9 @@ function NavBar({ contador, cartItems }) {
               {/* {contador} $, {cartItems} Item(s) */}
             </b>
           </p>
-          <div className={styles.cartNav}>
-            <CartWidget />
+          <div >
             <Link to="/cart" className={styles.smallNavText}>
-              Carrito
+              <CartWidget/>
             </Link>
           </div>
         </Container>

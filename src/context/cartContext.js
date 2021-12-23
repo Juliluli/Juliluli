@@ -25,9 +25,6 @@ const CartContextProvider = ({children}) => {
         //   }
     }
 
-    //Faltaría aplicar la lógica de borrar un producto 
-    //que eso lo podrías hacer con un filter comparando por "id".
-
     function clearCarrito() {
         setCartList([])
     }

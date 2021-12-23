@@ -60,12 +60,14 @@
   text-align: center;
   text-decoration: none;
   font-size: calc(10px +0.5vmin) !important;
-  margin: 0 5px;;
+  margin: 5px 5px;;
 }
 
 .cartNav {
   border: 1px dotted black;
+
 }
+
 
 .linktoCart {
   background-color: blue; /* Green */

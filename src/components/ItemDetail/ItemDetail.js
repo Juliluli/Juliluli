@@ -73,7 +73,7 @@ const ItemDetail = () => {
 
         {!gotoCart ? <ItemCount/> 
         : 
-        <Link to={"/cart"} className={styles.linktoCart}>Ir al carrito</Link>
+        <Link to={"/cart"} className={styles.linktoCart}>Terminar mi compra</Link>
         }
         <Link to={"/"} className={styles.linktoCart} >Volver al home</Link>
       </div>
