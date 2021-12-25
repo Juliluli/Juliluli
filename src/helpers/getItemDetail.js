@@ -70,7 +70,7 @@ const itemDetails = [
     foto: "https://media.istockphoto.com/photos/anchovy-isolated-with-path-picture-id186886032?k=20&m=186886032&s=612x612&w=0&h=NRAwqrtaOQgy8aRnuDA3ZSZAnXsxNjrw6grpc6R3zVo=",
     name: "Anchovy",
     description: "Anchovy",
-    small: "medium",
+    category: "medium",
     stock: 1,
     price: 2.5,
     detail:

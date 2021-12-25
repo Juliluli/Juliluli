@@ -64,7 +64,7 @@ const ItemDetail = () => {
         onAdd, addOne, subtractOne,reset}}>
 
       <div key={detalle.id}>
-        <h1>Detalles Item {detalle.id}</h1>
+        <h1>Detalles Item {detalle.name}</h1>
         <img src={detalle.foto} alt="Producto" className={styles.imgProduct} />
         <h3 className="nameProduct">
           {detalle.name}, $ {detalle.price}
