@@ -9,10 +9,9 @@ import { CartContext } from "../../context/cartContext";
 
 export const ContextApp1=createContext([])
 
-const ItemDetail = () => {
+const ItemDetail = ({detalle}) => {
 
   // const {cartInitial,setCartInitial, cartItems,setCartItems} =useContext(ContextApp)
-  const {detalle} =useContext(ContextApp2)
   const {cartList, addItem} =useContext(CartContext)
 
   const inicial = 1;

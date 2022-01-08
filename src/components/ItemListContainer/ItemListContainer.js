@@ -8,7 +8,6 @@ import { css } from "@emotion/react";
 import ClipLoader from "react-spinners/ClipLoader";
 import { set } from "react-hook-form";
 
-export const ContextApp3=createContext([])
 const override = css`
   display: block;
   margin: 0 auto;
@@ -55,19 +54,18 @@ const ItemListContainer = ({ greetings }) => {
     }
   }, [id]);
 
-  console.log(productos)
 
   return (
     <div>
-      <ContextApp3.Provider value={{productos}}>
+
       <p>{greetings}</p>
 
       {loading ? <><h2>Cargando...</h2>
        <ClipLoader css={override} size={150} color={"#123abc"} speedMultiplier={1.5} /></>
-      : <ItemList />}
+      : <ItemList productos={productos}/>}
       {/* <ItemList items={items}/> */}
       {/* {productos.map(producto=><li key={producto.id}>{producto.name}</li>)} */}
-      </ContextApp3.Provider>
+
     </div>
   );
 };

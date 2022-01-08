@@ -42,9 +42,14 @@ const CartContextProvider = ({children}) => {
         
     }
 
+    const precioTotal =()=> {
+        return cartList.reduce((total, item)=> total + (item.price*item.cantidad),0)
+    }
+
+
     return (
         <div>
-            <CartContext.Provider value={{cartList, addItem, removeItem, clearCarrito}}>
+            <CartContext.Provider value={{cartList, addItem, removeItem, clearCarrito,precioTotal}}>
                 {children}
             </CartContext.Provider>
             
