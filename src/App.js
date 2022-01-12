@@ -1,8 +1,6 @@
 import "./App.css";
 import ItemListContainer from "./components/ItemListContainer/ItemListContainer";
 import NavBar from "./components/NavBar/NavBar";
-//import NavBar1 from './components/NavBar/NavBar1';
-//https://gitlab.com/federico-osandon/comision19780/-/tree/main/src/components
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap.js";
 import { useState, createContext } from "react";
@@ -11,7 +9,7 @@ import styles from "./components/NavBar/NavBar.module.css";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 import Cart from "./components/Cart/Cart";
-import CartContextProvider, { CartContext } from "./context/cartContext";
+import CartContextProvider from "./context/cartContext";
 
 export const ContextApp=createContext([])
 
@@ -26,7 +24,6 @@ function App() {
         <ContextApp.Provider value={{cartInitial, setCartInitial,cartItems, setCartItems}}>
 
         <NavBar contador={cartInitial} cartItems={cartItems} />
-        {/* Hola, soy app de e-commerce. */}
         <Routes>
           <Route
             exact
@@ -56,7 +53,6 @@ function App() {
             }
           />
           <Route exact path="/cart" element={<Cart className={styles.p_position}/>} />
-          {/* <Redirect element={<Error404 />} /> */}
         </Routes>
 
         </ContextApp.Provider>
@@ -64,8 +60,6 @@ function App() {
     </BrowserRouter>
 
     </CartContextProvider>
-
-
   );
 }
 

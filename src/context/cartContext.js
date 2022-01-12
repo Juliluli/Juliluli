@@ -7,9 +7,6 @@ const CartContextProvider = ({children}) => {
     const [cartList, setCartList] = useState([])
     
     function addItem(item) {
-        // if (detalle) {
-        //     alert(`No se puede agregar este item otra vez.`);
-        //   } else {
 
         const index = cartList.findIndex(i => i.id ===item.id)
 
@@ -22,7 +19,6 @@ const CartContextProvider = ({children}) => {
         } else {
             setCartList([...cartList, item])
         }
-        //   }
     }
 
     function clearCarrito() {
@@ -31,16 +27,9 @@ const CartContextProvider = ({children}) => {
 
     function removeItem(id) {
 
-        // const index = cartList.findIndex(i => i.id ===itemId.id)
-        // cartList.splice(index, 1)
-        // setCartList([...cartList])
         setCartList(cartList.filter((producto)=>producto.id!==id))
     }
 
-
-    function isInCart(id) {
-        
-    }
 
     const precioTotal =()=> {
         return cartList.reduce((total, item)=> total + (item.price*item.cantidad),0)

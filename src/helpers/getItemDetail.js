@@ -79,8 +79,6 @@ const itemDetails = [
 ];
 
 export const getItemDetail = new Promise((resolve, reject) => {
-  //acciones pueden ser o no asincroniucas
-  // reject("404 not found")
   setTimeout(() => {
     resolve(itemDetails);
   }, 2000);

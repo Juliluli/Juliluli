@@ -1,12 +1,9 @@
-import React, { useState, useEffect ,createContext} from "react";
-import { getFetch } from "../../helpers/getFetch";
-import {collection, doc, getDoc, getFirestore,getDocs,query,where,limit} from 'firebase/firestore'
-import { getFirestoreApp } from "../../config/getFirestoreApp";
+import React, { useState, useEffect } from "react";
+import {collection, getFirestore,getDocs,query,where} from 'firebase/firestore'
 import ItemList from "../ItemList/ItemList";
 import { useParams } from "react-router-dom";
 import { css } from "@emotion/react";
 import ClipLoader from "react-spinners/ClipLoader";
-import { set } from "react-hook-form";
 
 const override = css`
   display: block;
@@ -16,25 +13,9 @@ const override = css`
 
 const ItemListContainer = ({ greetings }) => {
   const [productos, setProductos] = useState([]);
-  const [producto, setProducto] = useState({});
   const [loading, setLoading] = useState(true);
 
   const { id } = useParams();
-
-  // useEffect(() => {
-  //   if (id) {
-  //     getFetch
-  //       .then((resp) =>
-  //         setProductos(resp.filter((prod) => prod.category === id)))
-  //       .catch((err) => console.log(err))
-  //       .finally(() => setLoading(false));
-  //   } else {
-  //     getFetch
-  //       .then((resp) => setProductos(resp))
-  //       .catch((err) => console.log(err))
-  //       .finally(() => setLoading(false));
-  //   }
-  // }, [id]);
   
   useEffect(() => {
     const db=getFirestore();
@@ -63,8 +44,6 @@ const ItemListContainer = ({ greetings }) => {
       {loading ? <><h2>Cargando...</h2>
        <ClipLoader css={override} size={150} color={"#123abc"} speedMultiplier={1.5} /></>
       : <ItemList productos={productos}/>}
-      {/* <ItemList items={items}/> */}
-      {/* {productos.map(producto=><li key={producto.id}>{producto.name}</li>)} */}
 
     </div>
   );

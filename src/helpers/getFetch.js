@@ -65,8 +65,6 @@ const items = [
 ];
 
 export const getFetch = new Promise((resolve, reject) => {
-  //acciones pueden ser o no asincroniucas
-  // reject("404 not found")
   setTimeout(() => {
     resolve(items);
   }, 2000);

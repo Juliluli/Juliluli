@@ -3,16 +3,12 @@ import styles from "../NavBar/NavBar.module.css";
 import ItemCount from "../ItemCount/ItemCount";
 import { Link } from "react-router-dom";
 import { useState } from "react";
-import { ContextApp } from "../../App";
-import { ContextApp2 } from "../ItemDetailContainer/ItemDetailContainer";
 import { CartContext } from "../../context/cartContext";
 
 export const ContextApp1=createContext([])
 
 const ItemDetail = ({detalle}) => {
-
-  // const {cartInitial,setCartInitial, cartItems,setCartItems} =useContext(ContextApp)
-  const {cartList, addItem} =useContext(CartContext)
+  const {addItem} =useContext(CartContext)
 
   const inicial = 1;
   const [value, setValue] = useState(inicial);
@@ -28,30 +24,13 @@ const ItemDetail = ({detalle}) => {
   };
 
   function onAdd() {
-    // console.log(value)
-    // setCartInitial(cartInitial + value * detalle.price);
-    // setCartItems(cartItems + value);
-    // setStockafterAdd(stockafterAdd - value);
-    
+ 
       addItem({...detalle, cantidad:value});
       alert(`Exelente, agregaste ${value} a tu carrito.`);
       setValue(inicial);
       setgotoCart(true);
      
   }
-  //console.log(cartList)
-
-  // function ClearCart() {
-  //   if (cartItems >= value) {
-  //     setCartInitial(cartInitial - value * detalle.price);
-  //     setCartItems(cartItems - value);
-  //     setStockafterAdd(stockafterAdd + value);
-  //     setValue(inicial);
-  //   } else {
-  //     alert("no se puede borrar esta cantidad del carrito");
-  //     setValue(inicial);
-  //   }
-  // }
 
   const reset = () => {
     setValue(inicial);
@@ -82,10 +61,3 @@ const ItemDetail = ({detalle}) => {
 };
 
 export default ItemDetail;
-
-// {items.map(item=><div key={item.id}>
-//     <img src={item.foto} alt="Producto" className={styles.imgProduct} />
-//     <h3 className="nameProduct">{item.name}, $ {item.price}</h3>
-//     <h3 className="nameDetail">{item.detail}</h3>
-//     </div>
-//     )}

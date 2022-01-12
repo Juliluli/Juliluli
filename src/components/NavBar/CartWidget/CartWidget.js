@@ -1,19 +1,18 @@
 import React, {useContext} from "react";
 import { CartContext } from "../../../context/cartContext";
-import cart from "./cart.png";
 import "./CartWidget.css";
 
 const CartWidget = () => {
 
-  const {cartList, removeItem, clearCarrito} = useContext(CartContext)
+  const {cartList} = useContext(CartContext)
 
-  if (cartList.reduce((total, item)=>total+(item.cantidad),0)==0) {
+  if (cartList.reduce((total, item)=>total+(item.cantidad),0)===0) {
     return (
       <></>
     )
   }
   
-  else if (cartList.reduce((total, item)=>total+(item.cantidad),0)==1) {
+  else if (cartList.reduce((total, item)=>total+(item.cantidad),0)===1) {
     return (
       <>
       <h3  style={{display: "inline-block"}}><b>{cartList.reduce((total, item)=>total+(item.cantidad),0)} Item </b></h3>
@@ -56,8 +55,3 @@ const CartWidget = () => {
 
 export default CartWidget;
 
-{
-  /* <div>
-            <img src={cart} className="cart-widget" alt="cart" />
-        </div> */
-}

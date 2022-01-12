@@ -1,3 +1,7 @@
+# Intro
+
+En este proyecto se estaba creando una pescadería online usando react y firebase. Puede agregar o eliminar artículos de su carrito y finalizar su pedido. Al final, obtendrá una identificación de compra personalizada.
+
 # Getting Started with Create React App
 ``` javascript
 const lisa= 'student'
