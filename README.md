@@ -6,6 +6,9 @@ En este proyecto se estaba creando una pescadería online usando react y firebas
 ``` javascript
 const lisa= 'student'
 ```
+
+![](EntregaFinal.gif)
+
 ![](./public/Entregaintermedia.gif)
 
 ![](./Entregaintermedia.gif)
